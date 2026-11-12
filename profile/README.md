@@ -25,6 +25,8 @@ for build routes and release requirements.
 |---|---|
 | [postgres-extensions-containers](https://github.com/cnpg-extensions/postgres-extensions-containers) | Debian-packaged and PGRX extension images for CloudNativePG |
 | [artifacts](https://github.com/cnpg-extensions/artifacts) | Official `ClusterImageCatalog` manifests and signatures for the extension images |
+| [cnpg-sbom-generator](https://github.com/cnpg-extensions/cnpg-sbom-generator) | Standalone BuildKit SBOM generator for PostgreSQL extension containers |
+| [.github](https://github.com/cnpg-extensions/.github) | Organization profile and README |
 
 ## Usage
 
