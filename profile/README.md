@@ -8,7 +8,7 @@ provided by [upstream](https://github.com/cloudnative-pg/postgres-extensions-con
 
 ## Why does this exist?
 
-CNPG Extensions broadens the range of extensions available to CNPG users through
+We offer a very wide selection of PostgreSQL extensions for CNPG users through
 Debian packages and Rust-based PGRX builds. We welcome both extensions outside
 upstream's licensing policy and extensions eligible for future upstream inclusion;
 prior upstream rejection is not required.
