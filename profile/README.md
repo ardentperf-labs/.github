@@ -2,26 +2,28 @@
 
 # CNPG Extensions
 
-A home for PostgreSQL extension container images that are compatible with
-[CloudNativePG](https://cloudnative-pg.io/) but cannot be accepted into the
-official [cloudnative-pg/postgres-extensions-containers](https://github.com/cloudnative-pg/postgres-extensions-containers)
-project due to licensing constraints.
+A complementary catalog of PostgreSQL extension container images for
+[CloudNativePG](https://cloudnative-pg.io/), packaging extensions not already
+provided by [upstream](https://github.com/cloudnative-pg/postgres-extensions-containers).
 
 ## Why does this exist?
 
-The upstream CNPG project requires every component in an extension image to be
-covered by a license on the
-[CNCF Allowed Third-Party License Policy](https://github.com/cncf/foundation/blob/main/policies-guidance/allowed-third-party-license-policy.md).
-Some excellent, widely-used extensions contain source files under licenses that
-are not on that list (e.g. Vixie-Cron, GPL). The upstream maintainers will not
-file license exceptions for new extensions — which is a reasonable governance
-decision, not a criticism.
+CNPG Extensions broadens the range of extensions available to CNPG users through
+Debian packages and Rust-based PGRX builds. We welcome both extensions outside
+upstream's licensing policy and extensions eligible for future upstream inclusion;
+prior upstream rejection is not required.
+
+Inclusion requires useful functionality within CNPG, current platform support,
+transparent and maintainable dependencies, redistribution rights and license
+notices, and a committed maintainer. See the authoritative
+[extension inclusion policy](https://github.com/cnpg-extensions/postgres-extensions-containers#extension-requirements)
+for build routes and release requirements.
 
 ## Repositories
 
 | Repository | Description |
 |---|---|
-| [postgres-extensions-containers](https://github.com/cnpg-extensions/postgres-extensions-containers) | Container images for PostgreSQL extensions blocked from upstream by licensing |
+| [postgres-extensions-containers](https://github.com/cnpg-extensions/postgres-extensions-containers) | Debian-packaged and PGRX extension images for CloudNativePG |
 | [artifacts](https://github.com/cnpg-extensions/artifacts) | Official `ClusterImageCatalog` manifests and signatures for the extension images |
 
 ## Usage
@@ -32,8 +34,13 @@ and each extension's directory for `Cluster` and `Database` YAML examples.
 
 ## Relationship to upstream
 
-This org tracks the upstream build infrastructure as closely as possible. The
-only intentional divergence from
-[cloudnative-pg/postgres-extensions-containers](https://github.com/cloudnative-pg/postgres-extensions-containers)
-is the removal of upstream-maintained extensions and the addition of
-license-blocked ones.
+This org tracks the upstream build infrastructure as closely as possible and
+continually incorporates upstream improvements. Upstream takes precedence: when
+an extension is added upstream, we remove local packaging in favor of the
+upstream-maintained image. Our generated catalog retains upstream definitions
+and adds extensions maintained here.
+
+A separate **cnpg-universe** catalog for externally maintained images is
+[planned](https://github.com/cnpg-extensions/postgres-extensions-containers/issues/290).
+Its inclusion and maintenance policies remain to be defined; it is not yet an
+available submission route.
